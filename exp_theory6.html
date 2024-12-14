@@ -1,0 +1,341 @@
+<style>
+* {
+    /* overflow-y: hidden; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    background-image: url("hello.png");
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-attachment: fixed; 
+    z-index: -100;
+  }
+  #page1 { 
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0 2.5vw;
+    
+  }
+  #logo {
+    height: 180px;
+    margin-top: -6%;
+    position: absolute;
+  }
+  nav {
+    padding: 2vw 0vw;
+    width: 100%;
+    max-height: 20%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    z-index: 100;
+  }
+  #nav-part2 {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+  #nav-part2 h4 {
+    padding: 20px 20px;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #ffffffbb;
+    font-size: 18px;
+    position: relative;
+    transition: all ease 0.4s;
+    overflow: hidden;
+    /* background: linear-gradient(to bottom, #cb3cff, #640176); */
+  }
+  #nav-part2 h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+  }
+  #nav-part2 h4:hover::after {
+    bottom: 0;
+    border-radius: 0;
+  }
+  #nav-part2 h4 a {
+    text-decoration: none;
+    color: rgb(135, 199, 255);
+    position: relative;
+    z-index: 9;
+    font-weight: bold;
+  }
+  #nav-part2 h4:hover a {
+    color: #000000;
+  }
+
+  #background {
+    padding-left: 4dvw;
+    padding-right: 4dvw;
+    font-size: large;
+    color: rgb(249, 249, 249);
+    line-height: 35px;
+  }
+  #perform {
+    border: 3px solid black;
+    height: 10vh;
+    width: 10vw;
+    border-radius: 20px;
+    margin-left: 10%;
+    background-color: rgb(19, 222, 19);
+  }
+  
+  .button {
+    margin-left: 10%;
+  --bezier: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --edge-light: hsla(0, 0%, 50%, 0.8);
+  --text-light: rgba(255, 255, 255, 0.4);
+  --back-color: 240, 40%;
+
+  cursor: pointer;
+  padding: 0.7em 1em;
+  border-radius: 0.5em;
+  min-height: 2.4em;
+  min-width: 3em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  font-weight: bold;
+
+  background: linear-gradient(
+    140deg,
+    hsla(var(--back-color), 50%, 1) min(2em, 20%),
+    hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+  );
+  color: hsla(0, 0%, 90%);
+  border: 0;
+  box-shadow: inset 0.4px 1px 4px var(--edge-light);
+
+  transition: all 0.1s var(--bezier);
+}
+
+.button:hover {
+  --edge-light: hsla(0, 0%, 50%, 1);
+  text-shadow: 0px 0px 10px var(--text-light);
+  box-shadow: inset 0.4px 1px 4px var(--edge-light),
+    2px 4px 8px hsla(0, 0%, 0%, 0.295);
+  transform: scale(1.1);
+}
+
+.button:active {
+  --text-light: rgba(255, 255, 255, 1);
+
+  background: linear-gradient(
+    140deg,
+    hsla(var(--back-color), 50%, 1) min(2em, 20%),
+    hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+  );
+  box-shadow: inset 0.4px 1px 8px var(--edge-light),
+    0px 0px 8px hsla(var(--back-color), 50%, 0.6);
+  text-shadow: 0px 0px 20px var(--text-light);
+  color: hsla(0, 0%, 100%, 1);
+  letter-spacing: 0.1em;
+  transform: scale(1);
+}
+
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main">
+      <nav>
+        <a href="index.html"><img src="logo.png" id="logo" alt="logo" /></a>
+        <div id="nav-part2">
+          <h4><a href="exp_theory6.html">Experiment</a></h4>
+          <h4><a href="about_us.html">Contact</a></h4>
+          <h4><a href="feedback.html">Feedback</a></h4>
+        </div>
+      </nav>
+      <div id="background">
+        <h1 style="text-align: center">Proximate analysis of coal</h1>
+        <br />
+        <h3 style="font-weight: lighter">
+          <span style="font-weight: bold">1.0 TITLE:</span> Proximate analysis
+          of coal
+        </h3>
+        <br />
+
+        <h3 style="font-weight: lighter">
+          <span style="font-weight: bold">2.0 PRIOR CONCEPT:</span> Combustion,
+          calorific value, types and composition of coal and its uses.
+        </h3>
+        <br />
+        <h3 style="font-weight: lighter">
+          <span style="font-weight: bold">3.0 NEW CONCEPT:</span>
+        </h3>
+        <br />
+        <h3>PROPOSITION 1:</h3>
+        <h4 style="font-weight: lighter">
+          The composition of coal varies with source and age of the coal. In
+          order to decide the quality, rank and the price, two types of analysis
+          are carried out- <br />
+          (i) Proximate analysis <br />
+          (ii) Ultimate analysis <br />
+          Proximate analysis of coal deals with the determination of percentage
+          of moisture, volatile matter. ash and fixed carbon whereas ultimate
+          analysis is determination of %C, %N, %S and % O.
+        </h4>
+        <br />
+        <h3>PROPOSITION 2:</h3>
+        <h4 style="font-weight: lighter">
+          Proximate analysis of coal is carried out by pyrolysis of coal in
+          crucible in oven. The method is "proximate" because the results of
+          these analysis may vary and depend on the procedure adopted for the
+          analysis like temperature of heating, duration of heating material of
+          crucible used etc.
+        </h4>
+        <h3>PROPOSITION 3:</h3>
+        <h4 style="font-weight: lighter">
+          Fixed Carbon is the useful Carbon present in the coal and directly
+          relates to the quality of coal. It can be obtained by subtracting sum
+          of % moisture, % Volatile matter and % ash from 100.
+        </h4>
+        <br />
+
+        <h3 style="font-weight: lighter">
+          <span style="font-weight: bold">4.0 Information Input:</span><br />
+          <span style="font-weight: bold"
+            >Significance of Proximate analysis:</span
+          ><br /><br />
+          <span style="font-weight: bold">(a) Moisture</span><br />
+          i)Moisture is evaporated during burning of coal and in doing so, it
+          takes some part of the liberated heat. Thus, it reduces calorific
+          value. <br />
+          ii) It quenches the fire in the furnace.br <br />
+          iii) It increases the ignition temperature of the fuel. <br />
+          iv) It adds to handling, storage and transportation cost by its
+          weight. <br />
+          <span style="font-weight: bold"
+            >Hence, lower the moisture, better is the quality of coal.</span
+          ><br /><br />
+          <span style="font-weight: bold">b) Volatile matter</span><br />
+          i) Volatile matter is not originally present in the coal, but it is
+          formed and escaped during combustion process.<br />
+          It consists of combustible gases such as H₂, CO, hydrocarbons like CH,
+          and noncombustible gases such as CO₂ and N₂ <br />
+          ii) A high volatile matter containing coal burns with long flame. It
+          requires larger furnace volume iii) Coal with higher volatile matter
+          burns with smoke and low heating value.<br />
+          <span style="font-weight: bold"
+            >Hence, lesser the % of volatile matter, better the quality of coal. </span
+          ><br /><br />
+          <span style="font-weight: bold">c) Ash</span><br />
+          i) Ash is useless, non-combustible matter containing SiO2, Al2O3, CaO,
+          MgO, FeO etc. It reduces calorific value.
+          <br />
+          ii) It increases the transportation, handling and storage cost on
+          account of its weight.
+          <br />
+          iii) It involves additional cost for its disposal.
+          <br />
+          iv) It causes early corrosion and wear of furnace walls and burning
+          apparatus.
+          <br />
+          <span style="font-weight: bold"
+            >Hence, lesser the % of ash, better the quality of coal.</span
+          ><br /><br />
+          <span style="font-weight: bold">d) Fixed Carbon</span><br />
+          1) Out of total carbon content in the coal, part of carbon may
+          participate in the formation of volatile matter and may escape.
+          <br />Higher the percentage of fixed carbon, higher will be the
+          calorific value.<br />
+          It consists of combustible gases such as H₂, CO, hydrocarbons like CH,
+          and noncombustible gases such as CO₂ and N₂ <br />
+          <span style="font-weight: bold"
+            >Hence, higher the % fixed carbon, better will be the quality of
+            coal.</span
+          ><br />
+        </h3>
+        <br />
+
+        <h3 style="font-weight: lighter">
+          <span style="font-weight: bold">5.0 Learning Objectives:</span><br />
+          <span style="font-weight: bold">5.1 Intellectual Skills:</span><br />
+          1. To understand the concept of Proximate and ultimate analysis.<br />
+          2. To understand the adverse impact of moisture, volatile matter and
+          ash on the quality of coal and ultimately on its cost.<br />
+          3. To understand the determination of % of actual useful fixed
+          Carbon of the coal. <br /><br />
+          <span style="font-weight: bold">5.2 Motorskills:</span><br />
+          1. Ability to handle fragile crucible and other glassware.<br />
+          2. Ability to work with oven (temp<= 350 deg * C ) and muffle furnace
+          (temp. ≤1000℃)
+        </h3>
+        <br />
+
+        <h3 style="font-weight: lighter">
+          <span style="font-weight: bold">6.0 Stepwise Procedure:</span
+          ><br /><br />
+          <span style="font-weight: bold">6.1 Part A - Moisture Content</span
+          ><br />
+          1) Take known quantity of powdered coal sample in previously weighed
+          silica crucible. <br />
+          2) Heat the sample in an electric oven at about 100 to 110°C for about
+          an hour. <br />
+          3) Take out the crucible, cool it in desiccators and weigh it. <br />
+          4) Repeat the same procedure of heating and weighing the crucible till
+          constant weight is obtained. <br />
+          Note down the constant weight.<br /><br />
+          <span style="font-weight: bold">6.2 Part B - Volatile Matter</span
+          ><br />
+          1) Take known quantity of powdered coal sample in previously weighed
+          silica crucible. <br />
+          2) Heat the crucible in a muffle furnace at 950+20°C for exactly 7
+          minutes. <br />
+          3) After heating take out the crucible and allow it to cool and weigh
+          it. <br />
+          <span style="font-weight: bold">6.3 Part C - Ash</span><br />
+          1) Take residual coal which is moisture free and volatile matter free
+          (ie from part B). <br />
+          2) Weigh it and take it in a silica crucible. <br />
+          3) Ignite it openly for half an hour at 700-800°C <br />
+          4) Cool it and weigh it. It is weight of ash. <br />
+        </h3>
+        <br />
+        <!-- <a href="../exp 6 videos/exp 6 by video.html"><button id="perform">Perform</button></a> -->
+        <div>
+          <a href="Proximate analysis/exp 6 by video.html"><button class="button">
+            <svg
+              viewBox="0 0 16 16"
+              class="bi bi-lightning-charge-fill"
+              fill="currentColor"
+              height="16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"></path></svg>Start
+          </button></a>
+        </div>
+
+        <br /><div style="color: transparent;">Namaste</div>
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Lab</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Disket+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="loader">
+      <div class="slider" style="--i:0"></div>
+      <div class="slider" style="--i:1"></div>
+      <div class="slider" style="--i:2"></div>
+      <div class="slider" style="--i:3"></div>
+      <div class="slider" style="--i:4"></div>
+    </section>
+
+    <div id="page1">
+      <div class="maim">
+        <nav>
+          <a href="index.html"><img src="logo.png" id="logo" alt="logo" /></a>
+          <div id="burger" class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div id="nav-part2">
+            <h4><a href="exp_theory6.html">Experiment</a></h4>
+            <h4><a href="about_us.html">Contact</a></h4>
+            <h4><a href="feedback.html">Feedback</a></h4>
+          </div>
+        </nav> 
+
+        <div class="heading"><h1>Virtual Chemistry Lab</h1></div>
+        <div class="backlit">
+          <div class="left">
+            <div class="maincontainer">
+              Welcome to the Chemistry Virtual Lab! Dive into an interactive
+              platform where you can safely explore experiments, master
+              concepts, and unleash your curiosity—anytime, anywhere. Perfect
+              for students, educators, and enthusiasts, our lab brings
+              real-world chemistry to your fingertips. Start experimenting
+              today!
+              <br />
+              <a href="exp_theory6.html">
+                <button class="button">
+                  <svg
+                    class="svgIcon"
+                    viewBox="0 0 512 512"
+                    height="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+                    ></path>
+                  </svg>
+                  Start
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="right">
+            <div class="right-munde">
+              <img src="conical flask2.png" alt="img" class="animated-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
+        setTimeout(() => {
+          loader.style.opacity = "0"; // Add fade-out effect
+          loader.style.transition = "opacity 0.5s ease";
+          setTimeout(() => {
+            loader.style.display = "none"; // Completely hide the loader
+          }, 500); // Matches the transition duration
+        }, 3000); // 3 seconds delay
+      });
+    </script>
+    
+  </body>
+</html>

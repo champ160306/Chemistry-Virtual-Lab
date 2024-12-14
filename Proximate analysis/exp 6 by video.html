@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Titration</title>
+  </head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Disket+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="exp 6 by video.css" />
+  <body>
+    <nav>
+      <a href="index.html"><img src="logo.png" id="logo" alt="logo" /></a> 
+      <div id="nav-part2">
+        <h4><a href="exp 6 by video.html">Experiment</a></h4>
+        <h4><a href="../about_us.html">Contact</a></h4>
+        <h4><a href="../feedback.html">Feedback</a></h4>
+      </div>
+    </nav>
+
+    <div class="main">
+      <div class="left">
+        <div class="video-container">
+          <video id="myVideo" muted preload="auto">
+            <source id="videoSource" src="video1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <!-- New Section: Dynamic Text Lines -->
+        <div class="dynamic-info" id="dynamicInfo">
+          <p id="line1"></p>
+          <p id="line2"></p>
+        </div>
+      </div>
+      <div class="right">
+        <!-- Info Section -->
+        <div class="info-box" id="infoBox">
+          <h3 style="font-size: 2em;">Next Procedure:</h3>
+          <p id="infoText" style="font-size: 1.2em;">Take a empty crucible</p>
+        </div>
+        <button class="play-button" id="playButton" style="color: rgb(16, 27, 114); font-weight: bold; font-size: 1.3em;">Proceed</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // Array of video sources
+    const videos = [
+      "video1.mp4",
+      "video2.mp4",
+      "video3.mp4",
+      "video4.mp4",
+      "video5.mp4",
+      "video6.mp4",
+      "video7.mp4",
+      "video8.mp4",
+      "video9.mp4",
+      "video10.mp4",
+      "video11.mp4",
+      "video12.mp4",
+      "video13.mp4",
+      "video14.mp4",
+      "video15.mp4",
+      "video16.mp4",
+      "video17.mp4",
+      "video18.mp4",
+      "video19.mp4",
+      "video20.mp4",
+      "video21.mp4",
+      "video22.mp4",
+      "video23.mp4",
+      "video24.mp4",
+      "video25.mp4",
+    ];
+
+    // Corresponding texts for each video
+    const buttonTexts = [
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Proceed",
+      "Restart",
+    ];
+
+    // Information for dynamic-info
+    const dynamicTexts = [
+      ["", ""],
+      ["", ""],
+      ["Weight of empty crucible: 12.58 g ", ""],
+      ["Weight of empty crucible: 12.58 g ", ""],
+      [
+        "Weight of empty crucible: 12.58 g ",
+        " Weight of crucible and coal: 14.49 g",
+      ],
+      [
+        "Weight of empty crucible: 12.58 g ",
+        " Weight of crucible and coal: 14.49 g",
+      ],
+      [
+        "Weight of empty crucible: 12.58 g ",
+        " Weight of crucible and coal: 14.49 g",
+      ],
+      [
+        "Weight of empty crucible: 12.58 g ",
+        " Weight of crucible and coal: 14.49 g",
+      ],
+      [
+        "Weight of empty crucible: 12.58 g ",
+        " Weight of crucible and coal: 14.49 g",
+      ],
+      [
+        "Weight of empty crucible: 12.58 g ",
+        " Weight of crucible and coal: 14.49 g",
+      ],
+      ["Weight of crucible and coal after heating: 14.45 g ", ""],
+      ["Weight of crucible and coal after heating: 14.45 g ", ""],
+      ["", ""],
+      ["", ""],
+    ];
+
+    // Information for next procedure
+    const procedures = [
+      "",
+      "Weigh the empty crucible",
+      "Put coal in the crucible",
+      "Weigh the criucible with coal",
+      "Set Oven to 110 degree celsius",
+      "Put the crucible with coal in oven",
+      "Wait for 1 hour",
+      "Remove the crucible from oven with the help of tongs",
+      "Wait sometime and let it cool",
+      "Weigh the crucible",
+      "Calculate % Moisture",
+      "",
+      "Put the crucible with coal in furnace",
+      "Wait for exact 7 minutes",
+      "Remove the crucible from oven with the help of tongs",
+      "Weigh the crucible",
+      "Calculate % Volatile matter",
+      "",
+      "Put the crucible with coal in furnace",
+      "Wait for 30 minutes",
+      "Remove the crucible from oven with the help of tongs",
+      "Weigh the crucible",
+      "Calculate % Ash",
+    ];
+
+    let currentVideoIndex = 0; // Track the current video
+
+    // Get references to video and button
+    const videoElement = document.getElementById("myVideo");
+    const playButton = document.getElementById("playButton");
+    const videoSource = document.getElementById("videoSource");
+    const dynamicInfo = document.getElementById("dynamicInfo");
+    const infoText = document.getElementById("infoText");
+
+    // Function to play the current video
+    function playVideo() {
+      // Disable the button
+      playButton.disabled = true;
+
+      // Update the video source to the next video in the array
+      videoSource.src = videos[currentVideoIndex];
+      videoElement.load(); // Reload the video element
+      videoElement.play(); // Play the current video
+
+      // Use setTimeout to delay the button text change by 3 seconds
+      setTimeout(() => {
+        // Update the button text after 3 seconds
+        playButton.textContent = buttonTexts[currentVideoIndex];
+      }, 1500); // 3000 milliseconds = 3 seconds
+      setTimeout(() => {
+        // Update the info box text immediately
+        infoText.textContent = procedures[currentVideoIndex];
+      }, 1500);
+      setTimeout(() => {
+        // Update the info box text immediately
+        dynamicInfo.textContent = dynamicTexts[currentVideoIndex];
+      }, 2500);
+
+      // Re-enable the button after 2.5 seconds
+      setTimeout(() => {
+        playButton.disabled = false;
+      }, 1500);
+
+      // Update the index for the next video
+      currentVideoIndex = (currentVideoIndex + 1) % videos.length; // Loop back to the first video
+    }
+
+    // Add an event listener to the play button
+    playButton.addEventListener("click", playVideo);
+  </script>
+</html>
